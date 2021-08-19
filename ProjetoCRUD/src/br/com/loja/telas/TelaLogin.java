@@ -13,7 +13,8 @@ public class TelaLogin extends javax.swing.JFrame {
      try {
          pst = conexao.prepareStatement(sql);
          pst.setString(1, txtEmail.getText());
-         pst.setString(2, txtSenha.getText());
+       //  pst.setString(2, txtSenha.getText());
+       String captura_senha = new String(txtSenha.getPassword());
          
          rs = pst.executeQuery();
          
@@ -22,6 +23,8 @@ public class TelaLogin extends javax.swing.JFrame {
          // JOptionPane.showMessageDialog(null, "LOGADO");
          TelaPrincipal principal = new TelaPrincipal();
          principal.setVisible(true);
+         this.dispose();
+         conexao.close();
           
          } else {JOptionPane.showMessageDialog(null, "Usuário ou Senha inválidos");
          
