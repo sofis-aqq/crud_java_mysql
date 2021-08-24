@@ -20,6 +20,23 @@ public class TelaLogin extends javax.swing.JFrame {
          
          if (rs.next()){
           //ir para a tela principal
+          String perfil = rs.getString(6);
+          //System.out.println("Perfil: " + perfil);
+          if(perfil.equals("admin")){
+              TelaPrincipal principal = new TelaPrincipal();
+                principal.setVisible(true);
+                TelaPrincipal.MenuCadastroUsuarios.setEnabled(true);
+                TelaPrincipal.MenuRelatorio.setEnable(true);
+                TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                this.dispose();
+                conexao.close();
+          }else{
+               TelaPrincipal principal = new TelaPrincipal();
+                principal.setVisible(true);
+                this.dispose();
+                conexao.close();
+                        
+          }
          // JOptionPane.showMessageDialog(null, "LOGADO");
          TelaPrincipal principal = new TelaPrincipal();
          principal.setVisible(true);
@@ -80,8 +97,6 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        lblStatus.setText("Status");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +123,7 @@ public class TelaLogin extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

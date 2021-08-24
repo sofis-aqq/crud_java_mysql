@@ -89,11 +89,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadastro.add(menuOS);
 
         menuUsuarios.setText("Usuários");
+        menuUsuarios.setEnabled(false);
+        menuUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuUsuariosActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuUsuarios);
 
         jMenuBar1.add(menuCadastro);
 
         menuRel.setText("Relatório");
+        menuRel.setEnabled(false);
 
         menuServicos.setText("Serviços");
         menuServicos.addActionListener(new java.awt.event.ActionListener() {
@@ -196,6 +203,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
        sobre.setVisible(true);
     }//GEN-LAST:event_menuSobreActionPerformed
 
+    private void menuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuariosActionPerformed
+       TelaUsuarios usuarios = new TelaUsuarios();
+       usuarios.setVisible(true);
+       Desktop.add(usuarios);
+    }//GEN-LAST:event_menuUsuariosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -236,16 +249,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblIcone;
-    private javax.swing.JLabel lblUsuario;
-    private javax.swing.JMenu menuAjuda;
+    public static javax.swing.JLabel lblUsuario;
+    protected javax.swing.JMenu menuAjuda;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenuItem menuCliente;
     private javax.swing.JMenuItem menuOS;
     private javax.swing.JMenu menuOp;
-    private javax.swing.JMenu menuRel;
+    public static javax.swing.JMenu menuRel;
     private javax.swing.JMenuItem menuSair;
     private javax.swing.JMenuItem menuServicos;
     private javax.swing.JMenuItem menuSobre;
-    private javax.swing.JMenuItem menuUsuarios;
+    public static javax.swing.JMenuItem menuUsuarios;
     // End of variables declaration//GEN-END:variables
+
+    static class MenuCadastroUsuarios {
+
+        static void setEnabled(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public MenuCadastroUsuarios() {
+        }
+    }
+
+    static class MenuRelatorio {
+
+        static void setEnable(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public MenuRelatorio() {
+        }
+    }
 }
