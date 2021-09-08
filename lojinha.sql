@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Jul-2021 às 20:44
+-- Tempo de geração: 08-Set-2021 às 20:07
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 8.0.8
 
@@ -71,16 +71,17 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(50) NOT NULL,
   `fone` varchar(15) DEFAULT NULL,
   `login` varchar(15) NOT NULL,
-  `senha` varchar(15) NOT NULL
+  `senha` varchar(15) NOT NULL,
+  `perfil` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`iduser`, `usuario`, `fone`, `login`, `senha`) VALUES
-(1, 'Mika Cachorrinha', '097451775', 'mika', '1234'),
-(2, 'Rubi Cachorrinha', '1625612', 'rubi', '12345');
+INSERT INTO `usuarios` (`iduser`, `usuario`, `fone`, `login`, `senha`, `perfil`) VALUES
+(1, 'Mika Cachorrinha', '097451775', 'mika', '1234', 'user'),
+(2, 'Rubi Cachorrinha', '1625612', 'rubi', '12345', 'admin');
 
 --
 -- Índices para tabelas despejadas
