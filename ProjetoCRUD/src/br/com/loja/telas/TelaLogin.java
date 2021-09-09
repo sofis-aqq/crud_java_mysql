@@ -9,12 +9,13 @@ public class TelaLogin extends javax.swing.JFrame {
     ResultSet rs = null; //recebe o resultado das consultas sql
     
     public void logar(){
-     String sql = "SLEECT * FROM usuarios WHERE login=? AND senha=?";
+     String sql = "SELECT * FROM usuarios WHERE login=? AND senha=?";
      try {
          pst = conexao.prepareStatement(sql);
          pst.setString(1, txtEmail.getText());
        //  pst.setString(2, txtSenha.getText());
        String captura_senha = new String(txtSenha.getPassword());
+       pst.setString(2, captura_senha);
          
          rs = pst.executeQuery();
          
@@ -25,23 +26,24 @@ public class TelaLogin extends javax.swing.JFrame {
           if(perfil.equals("admin")){
               TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
-                TelaPrincipal.MenuCadastroUsuarios.setEnabled(true);
-                TelaPrincipal.MenuRelatorio.setEnable(true);
+                TelaPrincipal.MenuRelatorio.setEnabled(true);
+                TelaPrincipal.MenuUsuarios.setEnabled(true);
                 TelaPrincipal.lblUsuario.setText(rs.getString(2));
                 this.dispose();
                 conexao.close();
           }else{
                TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                TelaPrincipal.lblUsuario.setText(rs.getString(2));
                 this.dispose();
                 conexao.close();
                         
           }
          // JOptionPane.showMessageDialog(null, "LOGADO");
-         TelaPrincipal principal = new TelaPrincipal();
-         principal.setVisible(true);
-         this.dispose();
-         conexao.close();
+        // TelaPrincipal principal = new TelaPrincipal();
+        // principal.setVisible(true);
+        // this.dispose();
+        // conexao.close();
           
          } else {JOptionPane.showMessageDialog(null, "Usuário ou Senha inválidos");
          

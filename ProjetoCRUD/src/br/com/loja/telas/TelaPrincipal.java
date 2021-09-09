@@ -39,8 +39,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadastro = new javax.swing.JMenu();
         menuCliente = new javax.swing.JMenuItem();
         menuOS = new javax.swing.JMenuItem();
-        menuUsuarios = new javax.swing.JMenuItem();
-        menuRel = new javax.swing.JMenu();
+        MenuUsuarios = new javax.swing.JMenuItem();
+        MenuRelatorio = new javax.swing.JMenu();
         menuServicos = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         menuSobre = new javax.swing.JMenuItem();
@@ -48,6 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -59,7 +60,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,6 +77,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblData.setText("DATA");
 
         menuCadastro.setText("Cadastro");
+        menuCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroActionPerformed(evt);
+            }
+        });
 
         menuCliente.setText("Cliente");
         menuCadastro.add(menuCliente);
@@ -88,19 +94,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuCadastro.add(menuOS);
 
-        menuUsuarios.setText("Usuários");
-        menuUsuarios.setEnabled(false);
-        menuUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        MenuUsuarios.setText("Usuários");
+        MenuUsuarios.setEnabled(false);
+        MenuUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuUsuariosActionPerformed(evt);
+                MenuUsuariosActionPerformed(evt);
             }
         });
-        menuCadastro.add(menuUsuarios);
+        menuCadastro.add(MenuUsuarios);
 
         jMenuBar1.add(menuCadastro);
 
-        menuRel.setText("Relatório");
-        menuRel.setEnabled(false);
+        MenuRelatorio.setText("Relatório");
+        MenuRelatorio.setEnabled(false);
 
         menuServicos.setText("Serviços");
         menuServicos.addActionListener(new java.awt.event.ActionListener() {
@@ -108,9 +114,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 menuServicosActionPerformed(evt);
             }
         });
-        menuRel.add(menuServicos);
+        MenuRelatorio.add(menuServicos);
 
-        jMenuBar1.add(menuRel);
+        jMenuBar1.add(MenuRelatorio);
 
         menuAjuda.setText("Ajuda");
 
@@ -144,7 +150,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsuario)
                     .addComponent(lblIcone))
@@ -203,11 +209,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
        sobre.setVisible(true);
     }//GEN-LAST:event_menuSobreActionPerformed
 
-    private void menuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuariosActionPerformed
+    private void MenuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosActionPerformed
        TelaUsuarios usuarios = new TelaUsuarios();
        usuarios.setVisible(true);
        Desktop.add(usuarios);
-    }//GEN-LAST:event_menuUsuariosActionPerformed
+    }//GEN-LAST:event_MenuUsuariosActionPerformed
+
+    private void menuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +256,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
+    public static javax.swing.JMenu MenuRelatorio;
+    public static javax.swing.JMenuItem MenuUsuarios;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblIcone;
@@ -255,11 +267,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCliente;
     private javax.swing.JMenuItem menuOS;
     private javax.swing.JMenu menuOp;
-    public static javax.swing.JMenu menuRel;
     private javax.swing.JMenuItem menuSair;
     private javax.swing.JMenuItem menuServicos;
     private javax.swing.JMenuItem menuSobre;
-    public static javax.swing.JMenuItem menuUsuarios;
     // End of variables declaration//GEN-END:variables
 
     static class MenuCadastroUsuarios {
@@ -275,6 +285,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     static class MenuRelatorio {
 
         static void setEnable(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        static void setEnabled(boolean b) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
