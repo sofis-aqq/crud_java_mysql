@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Set-2021 às 20:07
+-- Tempo de geração: 09-Set-2021 às 19:41
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 8.0.8
 
@@ -81,7 +81,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`iduser`, `usuario`, `fone`, `login`, `senha`, `perfil`) VALUES
 (1, 'Mika Cachorrinha', '097451775', 'mika', '1234', 'user'),
-(2, 'Rubi Cachorrinha', '1625612', 'rubi', '12345', 'admin');
+(2, 'Rubi Cachorrinha', '1625612', 'rubi', '12345', 'admin'),
+(3, 'Soso', '123', 'Soso', '1234', 'admin');
 
 --
 -- Índices para tabelas despejadas
@@ -127,7 +128,7 @@ ALTER TABLE `ordem_servico`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas
