@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Out-2021 às 16:28
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 8.0.0
+-- Tempo de geração: 18-Nov-2021 às 22:44
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `loja`
 --
-CREATE DATABASE IF NOT EXISTS `loja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `loja`;
 
 -- --------------------------------------------------------
 
@@ -53,6 +51,8 @@ INSERT INTO `clientes` (`idcli`, `nomecli`, `endcli`, `fonecli`, `emailcli`) VAL
 CREATE TABLE `ordem_servicos` (
   `os` int(11) NOT NULL,
   `data_os` timestamp NOT NULL DEFAULT current_timestamp(),
+  `tipo` varchar(15) NOT NULL,
+  `situacao` varchar(50) NOT NULL,
   `equipamento` varchar(150) NOT NULL,
   `defeito` varchar(150) NOT NULL,
   `servico` varchar(150) DEFAULT NULL,
